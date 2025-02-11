@@ -1,0 +1,12 @@
+-Modifiers (Denetleyiciler)-
+1)Access modifiers (ERİŞİM)
+Public: Her yerden erişilebilir. Yani, aynı sınıftan, aynı paketten ya da tamamen farklı bir paketten erişilebilir.
+Private: Sadece tanımlandığı sınıf içerisinden erişilebilir. Başka bir sınıftan doğrudan erişim mümkün değildir.
+Protected: Sınıfı miras alan kullanabilir
+Default: Sadece aynı paketteki sınıflar erişebilir. Farklı paketten erişim mümkün değildir.
+
+-Sınıf Üyelerinde Erişim Belirleme-
+Methods: public, private, default, protected
+Attributes: public, private, default
+Constructor: public, default
+Class: public, default
