@@ -10,3 +10,11 @@ Methods: public, private, default, protected
 Attributes: public, private, default
 Constructor: public, default
 Class: public, default
+
+Sınıf üyeleri yukarıda kendisine belirtilen 
+erişimcilerle kontrol edilebilir
+
+Kapsülleme: Verinin gizlendiğinden emin olmaktır. Bir sınıfta
+oluşturulan attributes'i (name, id gibi) private yani erişilemez korunaklı yapmaktır
+
+Not: Java API den sınıf veya paket kullanmak için import kodunu kullanırız
