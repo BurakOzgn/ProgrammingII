@@ -1,4 +1,4 @@
--Modifiers (Denetleyiciler)-
+-Access Modifiers (Denetleyiciler)-
 1)Access modifiers (ERİŞİM)
 Public: Her yerden erişilebilir. Yani, aynı sınıftan, aynı paketten ya da tamamen farklı bir paketten erişilebilir.
 Private: Sadece tanımlandığı sınıf içerisinden erişilebilir. Başka bir sınıftan doğrudan erişim mümkün değildir.
@@ -10,6 +10,10 @@ Methods: public, private, default, protected
 Attributes: public, private, default
 Constructor: public, default
 Class: public, default
+
+-Non-Access Modifiers (Miras ile ilgili)-
+Classes yani sınıflar final olabilir. Final sınıfı miras alınamaz
+
 
 Sınıf üyeleri yukarıda kendisine belirtilen 
 erişimcilerle kontrol edilebilir
