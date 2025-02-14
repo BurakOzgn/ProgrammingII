@@ -11,14 +11,20 @@ Attributes: public, private, default
 Constructor: public, default
 Class: public, default
 
--Non-Access Modifiers (Miras ile ilgili)-
-Classes yani sınıflar final olabilir. Final sınıfı miras alınamaz
-
-
 Sınıf üyeleri yukarıda kendisine belirtilen 
 erişimcilerle kontrol edilebilir
 
-Kapsülleme: Verinin gizlendiğinden emin olmaktır. Bir sınıfta
+-------------------------------------------------------------------------------------------------------------------------
+
+-Non-Access Modifiers (Miras ile ilgili)-
+Final
+1) Final, bir sınıfın alt sınıf tarafından türetilmesini engeller. Miras alınmasını engeller
+2) Final, bir metodu override (başka sınıfta kullanılmasını) edilmesini engeller.
+3) Final, bir değişkenin değerinin yalnızca bir kez atanmasını sağlar.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Kapsülleme (Encapsulation): Verinin gizlendiğinden emin olmaktır. Bir sınıfta
 oluşturulan attributes'i (name, id gibi) private yani erişilemez korunaklı yapmaktır
 
 Not: Java API den sınıf veya paket kullanmak için import kodunu kullanırız
