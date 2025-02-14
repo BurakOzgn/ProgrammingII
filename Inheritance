@@ -1,0 +1,123 @@
+Inheritance (Kalıtım, miras)
+ Bir sınıfın özelliklerinin ve metotlarının başka sınıflara aktarılarak işlevinin artırılmasını sağlar.
+
+Dört tane sınf oluşturmamız gerekiyor. Bunlar(Main, User, UserService, UserServiceInh) şeklinde olacak
+User sınıfında özellikler(id, isim, şifre) olacak, UserService sınıfında CRUD, yani okuma, yazma, silme, güncelleme
+gibi metotlar yer alacak, UserServiceInh ise UserService sınıfını miras alacak ve UserService sınıfındaki metotlara
+erişebilecek. Main sınıfında ise kullanıcı istenilen verileri yazacak.
+
+------- User Sınıfı -----------
+package Inheritance;
+
+public class User {
+
+  //ATTRİBUTES (FİELD, ALAN) SINIFIN ÖZELLİKLERİ
+	private long id;
+	private String username;
+	private String name;
+	private String password;
+
+  //GETTER VE SETTER KODLARI
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+ //PARAMETRELİ METOT OLAN ALL-ARG CONSTRUCTOR
+	public User(long id, String username, String name, String password) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.name = name;
+		this.password = password;
+	}
+
+  //ALL-ARG CONSTRUCTOR YAZDIĞIMIZ İÇİN YAZMAMIZ GEREKEN NO-ARG CONSTRUCTOR
+	public User() {
+		super();
+	}
+
+}
+
+-------------- UserService Sınıfı ----------------------------
+package Inheritance;
+
+public class UserService {
+	
+	//CRUD (CREATE, READ, UPLOAD, DELETE) Veri depolamada ve işlemede kullanılan 4 temel fonksiyondur
+	
+	//CREATE
+	public void save(User user) {
+		
+	}
+	
+	//READ
+	public User getUserById(long id) {
+		return new User();
+	}
+	
+	//DELETE
+	public void deleteUserById(long id) {
+		
+	}
+	
+	//UPDATE
+	public void updateUserById() {
+		
+	}
+}
+
+------------------- UserServiceInh Sınıfı ----------------------------
+package Inheritance;
+
+public class UserServiceInh extends UserService{
+	//BAŞKA SINIFTAN MİRAS ALMAK İÇİN "EXTENDS" KODUNU KULLANDIK
+	//NOT: BİR SINIF DEFAULT OLARAK OBJECT SINIFINI MİRAS ALIR
+	
+	//Override, UserServiceInh sınıfında UserService sınıfından miras alınan bir metodu yeniden 
+  //tanımladığınızı (override ettiğinizi) belirtir.
+
+	@Override
+	public void save(User user) {
+		System.out.println("Welcome " + user.getUsername() + "\n your account is succesfully created");
+	}
+}
+
+------------------------- Main Sınıfı ------------------------------------
+package Inheritance;
+
+public class Main {
+
+	public static void main(String[] args) {
+		UserServiceInh user = new UserServiceInh();
+    //UserServiceInh sınıfındaki metotlara erişmek için Main sınıfında UserServiceInh sınıfını tanımladık
+		
+		user.save(new User(1016, "BrkOzgn", "Burak", "123"));
+	}
+
+}
+
+------------------------- Çıktı (Output) ------------------------------------
+Welcome BrkOzgn
+ your account is succesfully created
+
