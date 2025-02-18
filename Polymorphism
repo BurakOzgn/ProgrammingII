@@ -1,0 +1,27 @@
+Polimorfizm, kelime anlamı olarak "birçok form"u ifade eder ve kalıtım yoluyla birbirleriyle ilişkili çok sayıda 
+sınıfın bulunduğu durumlarda ortaya çıkar. Miras (inheritance), bir sınıfın başka bir sınıftan özellikleri ve metotları devralmasını sağlar. 
+Polimorfizm ise, bu metotların farklı işlevleri yerine getirmek üzere çeşitli şekillerde kullanılmasına olanak tanır. 
+Böylece, tek bir eylemin farklı şekillerde uygulanması mümkün hale gelir.
+
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+//miras almak için "extends" kodunu kullandık
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+
+Yukarıdaki örnekte Animal sınıfında oluşturulan metot diğer sınıflar tarafından
+miras alınarak elde edilmiş ve farklı görevler yapması üzerine değiştirilmiştir. İşte
+buna "çokbiçimlilik" yani polimorfizm denir.
