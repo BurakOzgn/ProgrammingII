@@ -18,6 +18,9 @@ public class User {
 	private String password;
 
   //GETTER VE SETTER KODLARI
+  // sağ-tıkla > Source > Generate Getters and Setter
+  // Getter ve Setter'ı oluşturulacak alanları (fields, attribute) seç "Generate" tıkla.
+
 	public long getId() {
 		return id;
 	}
@@ -44,6 +47,7 @@ public class User {
 	}
 
  //PARAMETRELİ METOT OLAN ALL-ARG CONSTRUCTOR
+ //Sağ-tık > Source > Generate Constructor Using Fields, ilgili alanları seç "Generate" tıkla
 	public User(long id, String username, String name, String password) {
 		super();
 		this.id = id;
@@ -53,6 +57,7 @@ public class User {
 	}
 
   //ALL-ARG CONSTRUCTOR YAZDIĞIMIZ İÇİN YAZMAMIZ GEREKEN NO-ARG CONSTRUCTOR
+  //Sağ-tık > Source > Generate Constructor Using Fields, kutucukları boş bırak "Generate" tıkla
 	public User() {
 		super();
 	}
