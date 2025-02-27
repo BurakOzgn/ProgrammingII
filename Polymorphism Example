@@ -1,0 +1,150 @@
+-------SHAPE SINIFI---------------------------
+//ALANI HESAPLANACAK ŞEKİLLER METOTLARINI BURADAN MİRAS ALACAK
+package polymorphism;
+
+public class Shape { 
+   public double area(double n1, double n2) { 
+      return n1 * n2; 
+   } 
+} 
+
+--------RECTANGLE(DİKDÖRTGEN) SINIFI-----------------------
+package polymorphism;
+
+public class Rectangle extends Shape { 
+private double widgt; 
+private double height; 
+
+//MİRAS ALINAN METOT
+@Override 
+public double area(double widgt, double height) { 
+  return widgt * height; 
+} 
+
+//GETTER VE SETTER KODLARI
+public double getWidgt() { 
+  return widgt; 
+} 
+public void setWidgt(double widgt) { 
+  this.widgt = widgt; 
+} 
+public double getHeight() { 
+  return height; 
+} 
+public void setHeight(double height) { 
+  this.height = height; 
+} 
+
+//CONSTRUCTOR'LAR
+public Rectangle(double widgt, double height) { 
+  this.widgt = widgt; 
+  this.height = height; 
+} 
+public Rectangle() { 
+} 
+
+} 
+
+---------------TRIANGLE(ÜÇGEN) SINIFI-----------------------
+package polymorphism;
+
+//EXTENDS KODUNU MİRAS ALMAK İÇİN KULLANDIK
+public class Triangle extends Shape{ 
+
+//FİELDS (ALANLAR VEYA ÖZELLİKLER)
+private double base; 
+private double height; 
+
+//SHAPES SINIFINDAN MİRAS ALINAN METOT
+@Override 
+public double area(double base, double height) { 
+  return (base * height)/2; 
+} 
+
+//GETTER VE SETTER KODLARI
+public double getWidgt() { 
+  return base; 
+} 
+public void setWidgt(double widgt) { 
+  this.base = widgt; 
+} 
+public double getHeight() { 
+  return height; 
+} 
+public void setHeight(double height) { 
+  this.height = height; 
+} 
+
+//CONSTRUCTOR'LAR
+public Triangle(double widgt, double height) { 
+  this.base = widgt; 
+  this.height = height; 
+} 
+public Triangle() { 
+} 
+
+} 
+
+-------------------- CIRCLE(DAİRE) SINIFI------------------------------
+package polymorphism;
+
+public class Circle extends Shape{ 
+
+private double radius; 
+private double PI; 
+
+//MİRAS ALINAN METOT
+@Override 
+public double area(double radius, double PI) { 
+  return (radius*radius) * PI; 
+} 
+
+//GETTER VE SETTER KODLARI
+public double getRadius() { 
+  return radius; 
+} 
+public double getPI() { 
+  return PI; 
+} 
+public void setRadius(double radius, double PI) { 
+  this.radius = radius; 
+  this.PI = PI; 
+} 
+public void setPI(double PI) { 
+  this.PI = PI; 
+}
+
+//CONSTRUCTOR'LAR
+public Circle(double radius, double PI) { 
+  this.radius = radius; 
+  this.PI = PI;
+} 
+public Circle() { 
+} 
+
+} 
+
+----------------------------MAIN SINIFI--------------------------------------------
+Package polymorphism;
+
+public class Main { 
+  public static void main(String[] args) { 
+
+     Shape rectangle = new Rectangle(); 
+     Shape triangle = new Triangle(); 
+     Shape circle = new Circle(); 
+
+     System.out.println("Area of rectangle: " + rectangle.area(5, 25)); 
+     System.out.println("Area of triangle: " + triangle.area(10, 3)); 
+     System.out.println("Area of circle: " + triangle.area(6, Math.PI)); 
+  } 
+}
+
+-------------------------------------------------------------------------------------------------
+Sonuç olarak, oluşturduğumuz Dikdörtgen, Üçgen ve Daire sınıfları, Shapes sınıfındaki 
+ilgili metodu miras almış ve bu metodu kendi özel gereksinimlerine göre uyarlamıştır. 
+Bu süreç, nesne yönelimli programlamada polymorphism (çok biçimlilik) kavramının 
+bir örneğidir. Her bir alt sınıf, üst sınıftan aldığı metodu kendi bağlamına uygun 
+şekilde yeniden tanımlayarak, ilgili geometrik şeklin alanını hesaplayacak biçimde özelleştirmiştir.
+Böylece, aynı metod farklı nesneler tarafından farklı şekillerde uygulanmış ve 
+dinamik bağlama (dynamic binding) prensibi doğrultusunda çalıştırılmıştır.
