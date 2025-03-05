@@ -1,0 +1,12 @@
+> Interface (Arayüz):
+Bir interface, tamamen soyut olan bir yapıdır. 
+Yani içinde sadece metot imzaları bulunur, metotların gövdesi (yani nasıl çalışacakları) yoktur.
+Bir sınıf bir interface'i implement eder (uygular). 
+Bir sınıf birden fazla interface'i implement edebilir. Bu çoklu kalıtımı sağlar.
+Interface'ler, genellikle davranışsal soyutlamalar için kullanılır.
+
+> Abstract Class (Soyut Sınıf):
+Bir soyut sınıf hem soyut hem de somut(regular, gövdeli) metotlar içerebilir. 
+Soyut sınıflar kalıtım yoluyla başka sınıflara aktarılabilir. 
+Bir sınıf sadece bir soyut sınıfı miras alabilir, yani tek kalıtım yapılabilir.
+Soyut sınıflar, genellikle nesne modelini tanımlamak ve paylaşmak için kullanılır.
