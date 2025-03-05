@@ -1,0 +1,107 @@
+------------------ User Sınıfı --------------------------
+package abstraction;
+
+public class User {
+	
+	private Long id;
+	private String name;
+	private String adress;
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getAdress() {
+		return adress;
+	}
+	
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public User(Long id, String name, String adress) {
+		this.id = id;
+		this.name = name;
+		this.adress = adress;
+	}
+
+	public User() {
+		super(); 
+		//SUPER() OBJECT SINIFINDAN MİRAS ALINDIĞINI SÖYLER
+		//HER SINIF DEFAULT OLARAK OBJECT SINIFINI MİRAS ALIR
+	}
+}
+
+-------------------- UserService Sınıfı ------------------------------------------
+package abstraction;
+
+public abstract class UserService {
+	
+	//SOYUT METOTLAR (GÖVDE YOK)
+	public abstract void saveUser(User user);
+	
+	public abstract User getUserById(Long id);
+	
+	public abstract void deleteUserById(Long id);
+	
+	//REGULAR, SOMUT METOT (GÖVDESİ VAR)
+	public void info() {
+		System.out.println("Abstract Class");
+	}
+}
+
+---------------------- UserServiceInh Sınıfı --------------------------------------
+package abstraction;
+
+public class UserServiceInh extends UserService {
+
+	//OVERRIDE EDİNCE BURADAKİ METOTA ABSTRACT KODUNU YAZMAMIZA GEREK KALMADI
+	//SOYUT SINIF MİRAS ALINDIĞINDA SOYUT METOTLAR OVERRIDE EDİLMELİ
+	@Override
+	public void saveUser(User user) {
+		System.out.println(user.getName() + " is succesfully saved");
+	}
+
+	@Override
+	public User getUserById(Long id) {
+		return new User(1001L, "Igetis", "İstanbul");
+	}
+
+	@Override
+	public void deleteUserById(Long id) {
+		System.out.println(id + " is succesfully deleted");
+	}
+	
+}
+
+------------------------------ Main Sınıfı ---------------------------------------
+package abstraction;
+
+public class Main {
+	public static void main(String[] args) {
+		//SOYUT SINIF instance EDİLEMEZ new Class(); TARZINDA.
+		//BU YÜZDEN SOYUT SINIFI MİRAS ALAN SINIF INSTANCE EDİLİR
+		UserService userService = new UserServiceInh(); //POLYMORPHİSM
+		
+		userService.info();
+		
+		userService.saveUser(new User(1001L, "Periergeia", "İstanbul" ));
+		
+		userService.deleteUserById(1001L);
+	}
+}
+-----------------------------------------------------------------------------------
+Soyutlama, karmaşıklığı azaltmak ve sadece gerekli detayları göstererek 
+sistemin anlaşılmasını kolaylaştırmak için kullanılır.
