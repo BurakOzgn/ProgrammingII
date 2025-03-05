@@ -1,0 +1,104 @@
+------------------------- GameConsole Sınıfı ---------------------------------
+package interfaces;
+
+public interface GameConsole {
+//Interfaces SINIF OLDUĞU İÇİN METOTLARI HEP SOYUT(GÖVDESİZ) OLMALI
+	void aButton();
+	void bButton();
+	void cButton();
+	void dButton();
+}
+
+-------------------------- SoccerGame Sınıfı --------------------------------
+package interfaces;
+
+//Interfaces'de MİRAS ALINIRKEN EXTENDS YERİNE IMPLEMENTS YAZILIR
+public class SoccerGame implements GameConsole {
+
+//GameConsole SINIFINDAKİ SOYUT METOTLAR BURADA OVERRİDE EDİLDİ
+//METOTLARIN İÇERİĞİ GEREKEN İŞLEMLERLE DOLDURULDU
+	@Override
+	public void aButton() {
+		System.out.println("Pas ver");
+	}
+
+	@Override
+	public void bButton() {
+		System.out.println("Şut at");
+	}
+
+	@Override
+	public void cButton() {
+		System.out.println("Ara pası ver");
+	}
+
+	@Override
+	public void dButton() {
+		System.out.println("Orta aç");
+	}
+
+}
+
+------------------------------- MarioGame Sınıfı ----------------------
+package interfaces;
+
+public class MarioGame implements GameConsole{
+
+	@Override
+	public void aButton() {
+		System.out.println("Sağa koş");
+	}
+
+	@Override
+	public void bButton() {
+		System.out.println("Sola koş");
+	}
+
+	@Override
+	public void cButton() {
+		System.out.println("Zıpla");
+	}
+
+	@Override
+	public void dButton() {
+		System.out.println("Eğil");
+	}
+
+}
+
+---------------------------- Main Sınıfı -------------------------------
+package interfaces;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		GameConsole soccer = new SoccerGame();
+		GameConsole mario = new MarioGame();
+		
+		System.out.println("Soccer Game");
+		soccer.aButton();
+		soccer.bButton();
+		soccer.cButton();
+		soccer.dButton();
+		
+		System.out.println("\nMario Game");
+		mario.aButton();
+		mario.bButton();
+		mario.cButton();
+		mario.dButton();
+		
+	}
+}
+
+----------------------------- OUTPUT (ÇIKTI) --------------------------------
+-Soccer Game-
+Pas ver
+Şut at
+Ara pası ver
+Orta aç
+
+-Mario Game-
+Sağa koş
+Sola koş
+Zıpla
+Eğil
