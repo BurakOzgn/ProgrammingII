@@ -1,0 +1,39 @@
+import java.io.*;
+
+abstract class Subject {
+
+    //CONSTRUCTOR, MESAJI EKRANA YAZDIRMAK İÇİN KULLANILMIŞTIR
+    Subject() { 
+      System.out.println("Learning Subject"); 
+    }
+
+      //SOYUT METOT
+      abstract void syllabus();
+
+      //SOMUT, REGULAR METOT
+      void Learn(){
+          System.out.println("Preparing Right Now!");
+      }
+}
+
+class IT extends Subject {
+  //Subject SINIFINDAKİ SOYUT METOT OVERRİDE EDİLDİ
+  //Learn() METODUNU OVERRİDE ETMEYE GEREK YOK ÇÜNKÜ İÇERİĞİ ZATEN VAR
+  void syllabus(){
+    System.out.println("C , Java , C++");
+  }
+}
+
+class GFG {
+    public static void main(String[] args) {
+          Subject x=new IT();
+
+          x.syllabus();
+          x.Learn();
+    }
+}
+
+-------------------------- OUTPUT ----------------------------
+Learning Subject
+C , Java , C++
+Preparing Right Now!
