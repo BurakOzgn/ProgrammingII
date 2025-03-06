@@ -1,0 +1,122 @@
+------------------------------ User Sınıfı ------------------------------------------------
+package interfaces;
+
+public class User {
+	
+	private long id;
+	private String name;
+	private char gender;
+	private boolean isLoggedIn;
+
+  //SAĞ TIK - SOURCE - GENERATE GETTERS AND SETTERS
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public boolean isLoggedIn() {
+		return isLoggedIn;
+	}
+	
+	public void setLoggedIn(boolean isLoggedIn) {
+		this.isLoggedIn = isLoggedIn;
+	}
+
+  //ALL-ARG CONSTRUCTOR'I OTOMATİK OLUŞTURMAK İÇİN
+  // SAĞ TIK- SOURCE - GENERATE CONSTRUCTOR USİNG FİELDS - TÜM KUTULARI SEÇ - GENERATE DE
+	public User(long id, String name, char gender, boolean isLoggedIn) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.isLoggedIn = isLoggedIn;
+	}
+
+  // NO-ARG CONSTRUCTOR'I OTOMATİK OLŞTURMAK İÇİN
+  // SAĞ TIK- SOURCE - GENERATE CONSTRUCTOR USİNG FİELDS - HİÇBİR KUTUYU İŞARETLEME - GENERATE DE
+	public User() {
+		super();
+	}
+
+}
+
+----------------------------------------- UserService Sınıfı ------------------------------------
+package interfaces;
+
+public interface UserService {
+
+  //INTERFACES BİR SINIF OLDUĞUNDAN BÜTÜN METOTLARI SOYUT YANİ GÖVDESİZ OLMALI 
+  //SOMUT YANİ GÖVDELİ METOT YAZILDIĞINDA HATA VERECEKTİR
+	void save (User user);
+	User getUserById(long id);
+	void deleteUserById(long id);
+}
+
+------------------------------------------- UserService Sınıfı -------------------------------------
+package interfaces;
+
+//UserService INTERFACES BİR SINIF OLDUĞU İÇİN MİRAS ALINIRKEN EXTENDS YERİNE IMPLEMENTS YAZILIR
+public class UserServiceImpl implements UserService{
+
+  //UserServiceImpl UserService SINIFINI MİRAS ALDI VE SOYUT METOTLARI MECBURİ OLARAK OVERRİDE ETTİ
+  //UserService SINIFINDAN GELEN BOŞ METOTLAR BURADA OVERRİDE EDİLDİ VE BELLİ BİR İŞLEMİ YERİNE GETİRMESİ SAĞLANDI
+	@Override
+	public void save(User user) {
+		System.out.println(user.getName() + " is saved");
+	}
+
+	@Override
+	public User getUserById(long id) {
+		return new User(id, "Igetis", 'M', true);
+	}
+
+	@Override
+	public void deleteUserById(long id) {
+		System.out.println(id + " is deleted");
+	}
+
+}
+
+---------------------------------------- Main Sınıfı ---------------------------------------------------
+package interfaces;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		//UserService bir arayüz (interface) olarak tanımlanmış ve UserServiceImpl ise bu arayüzü implement eden (uygulayan) sınıftır.
+		//INSTANCE İŞLEMİ
+		UserService userService = new UserServiceImpl();
+		
+		userService.save(new User(1001L, "Periergeia", 'F', true));
+		
+		User user = userService.getUserById(1);
+		System.out.println(user.getName() + " " + user.isLoggedIn());
+	}
+
+---------------------------------------- OUTPUT ----------------------------------------------------------
+Periergeia is saved
+Igetis true
+
+------------------------------------------------------------------------------------------------------------
+Bu örnek belli kavramların anlaşılması için oluşturulmuştur, burada bilmemiz gereken kavramlar
+instance, implement, interfaces (interfaces'in abstract ile farkı) gibi kavramlardır. 
+}
