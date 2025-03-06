@@ -1,3 +1,10 @@
+Interface(Arayüz) olarak tanımlanmış bir sınıftaki tüm metotlar soyuttur, yani
+gövdesiz metotlar oluşturulur. Somut yani gövdeli metot oluşturmaya çalışırsanız
+hata verecektir. Başka bir sınıf bu sınıfı miras alıp metotları override ettiğinde
+bu metotlar işlevli bir hale gelir. Kod içerisinde “new” anahtar sözcüğü ile 
+oluşturulamazlar yani instance edilemezler.
+
+Örnek;
 ------------------------- GameConsole Sınıfı ---------------------------------
 package interfaces;
 
