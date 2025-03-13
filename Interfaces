@@ -4,6 +4,10 @@ hata verecektir. Başka bir sınıf bu sınıfı miras alıp metotları override
 bu metotlar işlevli bir hale gelir. Kod içerisinde “new” anahtar sözcüğü ile 
 oluşturulamazlar yani instance edilemezler.
 
+Önemli not: Bir sınıf birden fazla interfaces(arayüz)'i implemente edebilir,
+ama birden fazla sınıfı extends edemez miras alamaz.
+Arayüzü implement etmenin ile normal sınıfı veya soyut sınıfı extends etmenin farkı budur.
+
 Örnek;
 ------------------------- GameConsole Sınıfı ---------------------------------
 package interfaces;
