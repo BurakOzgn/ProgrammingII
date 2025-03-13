@@ -1,0 +1,67 @@
+List<String> names = new ArrayList<>();
+
+Bu kod ile String veri tipinde bir liste yapısı oluşturulur.
+
+ArrayList, tamamen soyut olan List sınıfını implemente etmiştir (miras almış)
+
+Soyut metotlar instance edilemediği için (new kodu ile oluşturulamazlar yukarıdaki gibi)
+Bu yüzden soyut sınıfı miras almış olan ArrayList'i instance ediyoruz.
+
+List<type> yapısına primitive(ilkel) veri tipleri yazılamaz. Yani
+int yerine Integer, double yerine Double yazılmalı. String zaten ilkel değil direkt yazılır.
+
+----------------------- List Kodları --------------------------------------------------------------
+
+List<String> fruits = new ArrayList<>(List.of("Apple", "Banana", "Peach")); //Liste oluşturuldu
+System.out.println(fruits); //liste elemanları görüntülenir
+
+✔ fruits.add("Pineapple"); //Listeye ekler
+
+✔ fruits.add(2,"Pineapple"); //Belirtilen indexin yerine ekler.
+---> [Apple, Banana, Peach]
+---> [Apple, Banana, Pineapple, Peach] //Eklenmiş hali
+
+✔ fruits.get(0); //0 indexine sahip elemanı getirir.
+
+✔ fruits.remove(3); //3 indexine sahip eleman silinir.
+
+✔ fruits.clear(); //Tüm elemanları siler.
+
+✔ if(fruits.contains("Apple")) {
+    //CONTAINS KODU: Eğer listede Apple varsa if bloğunu çalıştırır.
+  }
+
+//FOREACH ELEMANLARI SIRAYLA LİSTELER
+✔ for(String fruit : fruits) {
+    System.out.println(fruit); 
+  }
+
+✔ Collections.sort(fruits); 
+//Elemanları alfabetik sıraya göre sıralar
+
+✔ Collections.sort(fruits, Collections.reverseOrder());
+//Elemanları alfabetik sıranın tersine doğru sıralar
+----------------------------------- Vector ---------------------------------------------------------------------------------
+
+List<Integer> numbers = new Vector<>(); //Şeklinde oluşturulur.
+
+Vector senkronizedir, yani çoklu iş parçacıkları (multi-threading) için güvenlidir. 
+Ancak bu, tek iş parçacıklı (single-threaded) uygulamalarda gereksiz bir performans yükü oluşturur.
+ArrayList senkronize değildir, yani çoklu iş parçacığında güvenli değildir ama daha hızlıdır.
+Her ikisi de aynı olarak array yapısını kullanır.
+
+-------------------------------------- LinkedList -----------------------------------------------------------------------------
+
+List<String> fruits = new LinkedList<>();
+
+LinkedList Arraylist ve Vector'dan farklı olarak Array yapısı kullanmaz, linked-list veri yapısını kullanır.
+LinkedList yapısında her eleman kendisinden sonraki gelen elemanı tanıyor, elemanlar biribirne bağlı
+
+------------------------------------- LinkedList ve Array Farkı ---------------------------------------------------------------
+✔ LinkedList
+Ekleme/Çıkarma: Kolay çünkü sadece bağlantılar değişiyor.
+Arama (search): Zor, çünkü baştan başlayarak tek tek ilerlemek gerekiyor. (elemanlar sırayla birbirine bağlı olduğu için)
+
+✔ ArrayList
+Ekleme/Çıkarma: Zor, çünkü eleman kaydırmaları gerekiyor. (Bir eleman dahi çıksa tüm elemanların indexi değişiyor)
+Arama (search): Kolay, çünkü index ile direkt erişilebiliyor).
